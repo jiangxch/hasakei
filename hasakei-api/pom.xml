@@ -11,5 +11,11 @@
 
     <artifactId>hasakei-api</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>hasakei-common</artifactId>
+        </dependency>
+    </dependencies>
 
 </project>

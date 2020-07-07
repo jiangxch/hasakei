@@ -12,7 +12,6 @@ CREATE TABLE `config_info`
     `gmt_create`   BIGINT(15)   NOT NULL COMMENT '创建时间',
     `gmt_modified` BIGINT(15)   NOT NULL COMMENT '修改时间',
     `config_desc`  varchar(256) DEFAULT NULL COMMENT '配置描述',
-    `type`         varchar(64)  NOT NULL,
     `user_id`      integer      NOT NULL,
     `username`     varchar(255) NOT NULL,
 

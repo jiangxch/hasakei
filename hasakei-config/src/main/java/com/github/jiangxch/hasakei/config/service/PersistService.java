@@ -1,4 +1,4 @@
-package com.github.jiangxch.hasakei.config.repository;
+package com.github.jiangxch.hasakei.config.service;
 
 import com.github.jiangxch.hasakei.config.arg.ConfigArg;
 

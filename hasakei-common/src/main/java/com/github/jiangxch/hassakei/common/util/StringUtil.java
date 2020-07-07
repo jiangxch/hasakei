@@ -1,10 +1,13 @@
-package com.github.jiangxch.hasakei.api.util;
+package com.github.jiangxch.hassakei.common.util;
 
 /**
  * @author: jiangxch
- * @date: 2020/7/6 11:56
+ * @date: 2020/7/7 11:20
  */
 public class StringUtil {
+    public static final String EMPTY = "";
+    public static final String NULL = "null";
+
     public static boolean isEmpty(final CharSequence cs) {
         return cs == null || cs.length() == 0;
     }

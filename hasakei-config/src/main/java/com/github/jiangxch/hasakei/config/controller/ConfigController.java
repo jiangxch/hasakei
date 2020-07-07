@@ -2,12 +2,11 @@ package com.github.jiangxch.hasakei.config.controller;
 
 import com.github.jiangxch.hasakei.api.exception.HsakeiException;
 import com.github.jiangxch.hasakei.config.arg.ConfigArg;
-import com.github.jiangxch.hasakei.config.repository.PersistService;
-import org.apache.commons.lang3.StringUtils;
+import com.github.jiangxch.hasakei.config.service.PersistService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
@@ -21,7 +20,7 @@ import javax.servlet.http.HttpServletResponse;
 @RestController
 public class ConfigController {
 
-    @Autowired
+    @Autowired(required = false)
     private PersistService persistService;
 
     @PostMapping
@@ -30,6 +29,13 @@ public class ConfigController {
 
         persistService.insertOrUpdateConfig(configArg);
         return true;
+    }
+
+    @GetMapping
+    public String getConfig()  {
+
+
+        return "true";
     }
 
 }

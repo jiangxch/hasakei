@@ -110,6 +110,7 @@
         <HikariCP.version>3.4.2</HikariCP.version>
         <jraft-core.version>1.3.2</jraft-core.version>
         <rpc-grpc-impl.version>1.3.2</rpc-grpc-impl.version>
+        <lombok.version>1.18.6</lombok.version>
     </properties>
 
     <!-- 所有的子项目默认依赖 -->
@@ -121,6 +122,12 @@
             <scope>test</scope>
         </dependency>
 
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 
     <!-- 管理依赖版本号,子项目不会默认依赖 -->

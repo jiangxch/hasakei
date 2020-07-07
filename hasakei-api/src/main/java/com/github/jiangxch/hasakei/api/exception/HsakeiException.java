@@ -1,7 +1,7 @@
 package com.github.jiangxch.hasakei.api.exception;
 
 import com.github.jiangxch.hasakei.api.constant.Constants;
-import com.github.jiangxch.hasakei.api.util.StringUtil;
+import com.github.jiangxch.hassakei.common.util.StringUtil;
 
 public class HsakeiException extends Exception {
     
