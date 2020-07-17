@@ -133,6 +133,13 @@
     <!-- 管理依赖版本号,子项目不会默认依赖 -->
     <dependencyManagement>
         <dependencies>
+            <!--     个人基础组件       -->
+            <dependency>
+                <groupId>com.github.jiangxch.mybatis</groupId>
+                <artifactId>basic-mybatis-support-autoconfigure</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+
             <dependency>
                 <!-- Import dependency management from Spring Boot -->
                 <groupId>org.springframework.boot</groupId>

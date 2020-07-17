@@ -2,7 +2,6 @@ package com.github.jiangxch.hasakei.config.controller;
 
 import com.github.jiangxch.hasakei.api.exception.HsakeiException;
 import com.github.jiangxch.hasakei.config.arg.ConfigArg;
-import com.github.jiangxch.hasakei.config.service.PersistService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
