@@ -19,14 +19,11 @@ import javax.servlet.http.HttpServletResponse;
 @RestController
 public class ConfigController {
 
-    @Autowired(required = false)
-    private PersistService persistService;
 
     @PostMapping
     public Boolean publishConfig(HttpServletRequest request, HttpServletResponse response,
                                  ConfigArg configArg) throws HsakeiException {
 
-        persistService.insertOrUpdateConfig(configArg);
         return true;
     }
 

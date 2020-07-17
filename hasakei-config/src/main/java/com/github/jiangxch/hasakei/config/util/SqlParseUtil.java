@@ -2,6 +2,7 @@ package com.github.jiangxch.hasakei.config.util;
 
 import com.github.jiangxch.hassakei.common.util.FileUtil;
 import com.github.jiangxch.hassakei.common.util.JsonUtil;
+import org.springframework.core.io.ClassPathResource;
 
 /**
  * @author: jiangxch
@@ -10,10 +11,13 @@ import com.github.jiangxch.hassakei.common.util.JsonUtil;
 public class SqlParseUtil {
 
     public static void main(String[] args) {
-        String sql = FileUtil.readFile("db/config.sql");
-        System.out.println(JsonUtil.toJson(sql));
-        System.out.println("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
-        System.out.println(sql);
+            ClassPathResource r = new ClassPathResource("classpath*:META-INF/basic-mybatis-support-config.properties");
+            System.out.println(r.exists());
+
+//        String sql = FileUtil.readFile("db/config.sql");
+//        System.out.println(JsonUtil.toJson(sql));
+//        System.out.println("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+//        System.out.println(sql);
     }
 
 }
