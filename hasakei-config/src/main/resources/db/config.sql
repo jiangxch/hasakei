@@ -1,3 +1,8 @@
+
+
+
+CREATE SCHEMA hasakei AUTHORIZATION hasakei;
+
 /******************************************/
 /*   数据库全名 = hasakei   */
 /*   表名称 = config_info   */

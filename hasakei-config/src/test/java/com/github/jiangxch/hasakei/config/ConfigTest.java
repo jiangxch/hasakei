@@ -12,6 +12,8 @@ import org.springframework.core.io.ClassPathResource;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 /**
  * @author: jiangxch
@@ -24,12 +26,15 @@ public class ConfigTest extends BaseTest{
     private SqlSessionFactory sqlSessionFactory;
 
     @Test
-    public void createDb() {
+    public void createDb() throws SQLException {
         SqlSession sqlSession = sqlSessionFactory.openSession();
         Connection connection = sqlSession.getConnection();
 
         String sql = FileUtil.readFile("db/config.sql");
         System.out.println(sql);
+
+        Statement state = connection.createStatement();
+        state.execute(sql);
     }
 
 
