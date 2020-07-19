@@ -2,6 +2,7 @@ package com.github.jiangxch.hasakei.config;
 
 import com.github.jiangxch.hasakei.config.dao.UsersMapper;
 import com.github.jiangxch.hassakei.common.util.FileUtil;
+import com.google.common.base.Splitter;
 import org.apache.commons.io.FileUtils;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -15,6 +16,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.List;
 
 /**
  * @author: jiangxch
@@ -32,10 +34,16 @@ public class ConfigTest extends BaseTest{
         Connection connection = sqlSession.getConnection();
 
         String sql = FileUtil.readFile("db/config.sql");
-        System.out.println(sql);
-
+//        System.out.println(sql);
         Statement state = connection.createStatement();
-        state.execute("select COUNT(*) from SYS.SYSALIASES");
+
+        String[] sqls = sql.split(";");
+        for (String s : sqls) {
+            if (!"".equals(s)) {
+                state.execute(s);
+            }
+        }
+
     }
 
     @Autowired

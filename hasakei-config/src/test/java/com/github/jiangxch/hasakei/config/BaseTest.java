@@ -17,16 +17,16 @@ public class BaseTest {
 //        System.setProperty("password", "");
 //        System.setProperty("url", "jdbc:h2:mem:blog;DB_CLOSE_DELAY=-1");
 
-        System.setProperty("driverClassName", "org.apache.derby.jdbc.EmbeddedDriver");
-        System.setProperty("username", "hasakei");
-        System.setProperty("password", "hasakei");
-        System.setProperty("url", "jdbc:derby:"
-                // /home/lanlan/hasakei/data/derby-data
-//                + Paths.get(System.getProperty("user.home"), "hasakei","data","derby-data").toString());
-                + Paths.get(System.getProperty("user.home"), "hasakei").toString()
+//        System.setProperty("driverClassName", "org.apache.derby.jdbc.EmbeddedDriver");
+//        System.setProperty("username", "hasakei");
+//        System.setProperty("password", "hasakei");
+//        System.setProperty("url", "jdbc:derby:"
+//                // /home/lanlan/hasakei/data/derby-data
+////                + Paths.get(System.getProperty("user.home"), "hasakei","data","derby-data").toString()
+//                + Paths.get(System.getProperty("user.home"), "hasakei").toString()
 //                + ";create=true"
-        );
-        System.out.println(System.getProperty("url"));
+//        );
+//        System.out.println("url: "+System.getProperty("url"));
     }
 
 
