@@ -1,5 +1,6 @@
 package com.github.jiangxch.hasakei.config;
 
+import com.github.jiangxch.hasakei.config.dao.UsersMapper;
 import com.github.jiangxch.hassakei.common.util.FileUtil;
 import org.apache.commons.io.FileUtils;
 import org.apache.ibatis.session.SqlSession;
@@ -34,8 +35,16 @@ public class ConfigTest extends BaseTest{
         System.out.println(sql);
 
         Statement state = connection.createStatement();
-        state.execute(sql);
+        state.execute("select COUNT(*) from SYS.SYSALIASES");
     }
 
+    @Autowired
+    private UsersMapper usersMapper;
+
+    @Test
+    public void  curdTest(){
+        System.out.println(usersMapper.findAll());
+        System.out.println(usersMapper.aaa());
+    }
 
 }

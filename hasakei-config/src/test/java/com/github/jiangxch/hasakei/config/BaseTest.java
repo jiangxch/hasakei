@@ -24,7 +24,8 @@ public class BaseTest {
                 // /home/lanlan/hasakei/data/derby-data
 //                + Paths.get(System.getProperty("user.home"), "hasakei","data","derby-data").toString());
                 + Paths.get(System.getProperty("user.home"), "hasakei").toString()
-                + ";create=true");
+//                + ";create=true"
+        );
         System.out.println(System.getProperty("url"));
     }
 
