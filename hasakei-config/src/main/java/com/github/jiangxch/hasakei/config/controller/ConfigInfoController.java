@@ -15,23 +15,8 @@ import javax.servlet.http.HttpServletResponse;
  * @author: jiangxch
  * @date: 2020/7/6 11:42
  */
-@RequestMapping("config")
+@RequestMapping("configInfo")
 @RestController
-public class ConfigController {
-
-
-    @PostMapping
-    public Boolean publishConfig(HttpServletRequest request, HttpServletResponse response,
-                                 ConfigArg configArg) throws HsakeiException {
-
-        return true;
-    }
-
-    @GetMapping
-    public String getConfig()  {
-
-
-        return "true";
-    }
-
+public class ConfigInfoController {
+    public
 }

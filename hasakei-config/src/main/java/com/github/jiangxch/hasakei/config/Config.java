@@ -13,18 +13,6 @@ import java.nio.file.Paths;
 @SpringBootApplication
 @MapperScan("com.github.jiangxch.hasakei.config.dao")
 public class Config {
-    static {
-        System.setProperty("driverClassName", "org.apache.derby.jdbc.EmbeddedDriver");
-        System.setProperty("username", "hasakei");
-        System.setProperty("password", "hasakei");
-        System.setProperty("url", "jdbc:derby:"
-                // /home/lanlan/hasakei/data/derby-data
-//                + Paths.get(System.getProperty("user.home"), "hasakei","data","derby-data").toString());
-                + Paths.get(System.getProperty("user.home"), "hasakei").toString()
-//                + ";create=true"
-                );
-    }
-
     public static void main(String[] args) {
         SpringApplication.run(Config.class,args);
     }

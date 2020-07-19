@@ -19,12 +19,13 @@ import java.sql.Statement;
 import java.util.List;
 
 /**
+ * 默认使用 application.properties 配置
  * @author: jiangxch
  * @date: 2020/7/17 18:56
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class ConfigTest extends BaseTest{
+public class ConfigTest {
     @Autowired
     private SqlSessionFactory sqlSessionFactory;
 
