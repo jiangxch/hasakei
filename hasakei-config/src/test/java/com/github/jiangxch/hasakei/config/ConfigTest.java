@@ -1,22 +1,18 @@
 package com.github.jiangxch.hasakei.config;
 
 import com.github.jiangxch.hasakei.config.dao.UsersMapper;
-import com.github.jiangxch.hassakei.common.util.FileUtil;
-import com.google.common.base.Splitter;
-import org.apache.commons.io.FileUtils;
+import com.github.jiangxch.hasakei.common.util.FileUtil;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.core.io.ClassPathResource;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.List;
 
 /**
  * 默认使用 application.properties 配置

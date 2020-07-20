@@ -28,7 +28,8 @@ public enum  ResultCode {
     /**
      * ei不存在,或者ei未在灰度配置中
      */
-    EI_NOT_EXIST(33009, "this is is not exist,or ei not in gray", "ei不存在,或者ei未在灰度配置中")
+    EI_NOT_EXIST(33009, "this is is not exist,or ei not in gray", "ei不存在,或者ei未在灰度配置中"),
+    SQL_UNIQUE_ERROR(33010, "sql unique error", "sql索引插入不唯一")
     ;
     /**
      * 错误码

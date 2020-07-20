@@ -1,7 +1,5 @@
 package com.github.jiangxch.hasakei.config.util;
 
-import com.github.jiangxch.hassakei.common.util.FileUtil;
-import com.github.jiangxch.hassakei.common.util.JsonUtil;
 import org.springframework.core.io.ClassPathResource;
 
 /**

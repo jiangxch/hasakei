@@ -13,7 +13,7 @@ public class PageResult<T> implements Serializable {
 
     private Integer pageSize;
 
-    private Long totalCount;
+    private Integer totalCount;
 
     private List<T> dataList;
 }

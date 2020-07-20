@@ -1,4 +1,4 @@
-package com.github.jiangxch.hassakei.common.util;
+package com.github.jiangxch.hasakei.common.util;
 
 import com.google.gson.*;
 

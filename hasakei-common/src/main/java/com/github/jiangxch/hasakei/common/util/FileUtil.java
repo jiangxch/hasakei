@@ -1,7 +1,6 @@
-package com.github.jiangxch.hassakei.common.util;
+package com.github.jiangxch.hasakei.common.util;
 
 import lombok.extern.slf4j.Slf4j;
-import lombok.extern.slf4j.XSlf4j;
 
 import java.io.*;
 import java.net.URL;
