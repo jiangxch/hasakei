@@ -5,4 +5,11 @@
     <select id="aaa" resultType="com.github.jiangxch.hasakei.config.dao.entity.Users">
         SELECT * FROM users
     </select>
+    <select id="getByUsernameAndPassword" resultType="com.github.jiangxch.hasakei.config.dao.entity.Users">
+        SELECT * FROM users WHERE username=#{username} AND password=#{password}
+    </select>
+    <select id="getByUsername" resultType="com.github.jiangxch.hasakei.config.dao.entity.Users">
+        SELECT * FROM users WHERE username=#{username}
+
+    </select>
 </mapper>
