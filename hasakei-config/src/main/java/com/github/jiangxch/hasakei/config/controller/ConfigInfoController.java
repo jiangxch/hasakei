@@ -2,6 +2,7 @@ package com.github.jiangxch.hasakei.config.controller;
 
 import com.github.jiangxch.hasakei.common.model.PageResult;
 import com.github.jiangxch.hasakei.common.model.Result;
+import com.github.jiangxch.hasakei.config.arg.CreateConfigInfoArg;
 import com.github.jiangxch.hasakei.config.arg.ListConfigInfoByPageArg;
 import com.github.jiangxch.hasakei.config.arg.UpdateConfigInfoArg;
 import com.github.jiangxch.hasakei.config.dao.entity.ConfigInfo;
@@ -56,6 +57,6 @@ public class ConfigInfoController {
     @ApiOperation(value = "创建配置文件", tags = "配置中心")
     @PostMapping("createConfigInfo")
     public Result createConfigInfo(@Valid @RequestBody CreateConfigInfoArg arg) {
-        return configInfoService.deleteConfigById(id);
+        return null;
     }
 }

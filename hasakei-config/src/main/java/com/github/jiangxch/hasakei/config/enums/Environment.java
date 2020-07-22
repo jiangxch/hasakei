@@ -10,9 +10,9 @@ public enum Environment {
     ;
 
     private String envName;
-    private int type;
+    private Integer type;
 
-    Environment(String envName, int type) {
+    Environment(String envName, Integer type) {
         this.envName = envName;
         this.type = type;
     }
