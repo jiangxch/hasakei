@@ -25,7 +25,7 @@ public class ConfigInfoController {
 
     @ApiOperation(value = "分页获取配置信息", tags = "配置中心")
     @PostMapping("listConfigInfoByPage")
-    public Result<PageResult<ConfigInfo>> listConfigInfoByPage(@Valid ListConfigInfoByPageArg arg) {
+    public Result<PageResult<ConfigInfo>> listConfigInfoByPage(@RequestBody @Valid ListConfigInfoByPageArg arg) {
         return configInfoService.listConfigInfoByPage(arg);
     }
 
@@ -37,7 +37,7 @@ public class ConfigInfoController {
 
     @ApiOperation(value = "根据id修改配置文件", tags = "配置中心")
     @PostMapping("updateConfigInfo")
-    public Result updateConfigInfo(@Valid UpdateConfigInfoArg arg) {
+    public Result updateConfigInfo(@RequestBody @Valid UpdateConfigInfoArg arg) {
         return configInfoService.updateConfigInfo(arg);
     }
 
@@ -45,5 +45,11 @@ public class ConfigInfoController {
     @PostMapping("deleteConfigById")
     public Result deleteConfigById(@Min(1) @RequestParam Integer id) {
         return configInfoService.deleteConfigById(id);
+    }
+
+    @ApiOperation(value = "创建配置文件", tags = "配置中心")
+    @PostMapping("createConfigInfo")
+    public Result createConfigInfo(@RequestBody ConfigInfo arg) {
+        return configInfoService.createConfigInfo(arg);
     }
 }

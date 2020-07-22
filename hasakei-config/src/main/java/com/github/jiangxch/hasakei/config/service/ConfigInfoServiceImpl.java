@@ -46,4 +46,9 @@ public class ConfigInfoServiceImpl {
         configInfoMapper.deleteById(id);
         return Result.newSuccess();
     }
+
+    public Result createConfigInfo(ConfigInfo arg) {
+        configInfoMapper.create(arg);
+        return Result.newSuccess();
+    }
 }
