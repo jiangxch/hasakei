@@ -10,7 +10,6 @@ CREATE TABLE config_info
     gmt_create   timestamp    NOT NULL DEFAULT '2010-05-05 00:00:00',
     gmt_modified timestamp    NOT NULL DEFAULT '2010-05-05 00:00:00',
     config_desc  varchar(256)          DEFAULT NULL,
-    user_id      integer      NOT NULL,
     username     varchar(255) NOT NULL,
 
     constraint configinfo_id_key PRIMARY KEY (id),
