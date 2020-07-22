@@ -52,4 +52,10 @@ public class ConfigInfoController {
     public Result createConfigInfo(@RequestBody ConfigInfo arg) {
         return configInfoService.createConfigInfo(arg);
     }
+
+    @ApiOperation(value = "创建配置文件", tags = "配置中心")
+    @PostMapping("createConfigInfo")
+    public Result createConfigInfo(@Valid @RequestBody CreateConfigInfoArg arg) {
+        return configInfoService.deleteConfigById(id);
+    }
 }
