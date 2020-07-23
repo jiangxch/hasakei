@@ -15,4 +15,6 @@ public interface ConfigInfoMapper extends ICurdMapper<ConfigInfo> {
     List<ConfigInfo> listConfigInfoByPage(@Param("arg") ListConfigInfoByPageArg arg);
 
     int create(@Param("arg") ConfigInfo arg);
+
+    int updateConfigInfoById(@Param("configInfo") ConfigInfo configInfo);
 }

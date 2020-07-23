@@ -6,6 +6,8 @@ import com.github.jiangxch.hasakei.config.arg.CreateConfigInfoArg;
 import com.github.jiangxch.hasakei.config.arg.ListConfigInfoByPageArg;
 import com.github.jiangxch.hasakei.config.arg.UpdateConfigInfoArg;
 import com.github.jiangxch.hasakei.config.dao.entity.ConfigInfo;
+import com.github.jiangxch.hasakei.config.manager.AuthInfo;
+import com.github.jiangxch.hasakei.config.manager.RequestContextHolder;
 import com.github.jiangxch.hasakei.config.service.ConfigInfoServiceImpl;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,7 +34,7 @@ public class ConfigInfoController {
 
     @ApiOperation(value = "id获取单个配置详细信息", tags = "配置中心")
     @PostMapping("getConfigInfoById")
-    public Result<ConfigInfo> getConfigInfoById(@RequestParam @Min(1) Integer id) {
+    public Result<ConfigInfo> getConfigInfoById(@RequestParam @Min(1) Long id) {
         return configInfoService.getConfigInfoById(id);
     }
 
@@ -48,15 +50,11 @@ public class ConfigInfoController {
         return configInfoService.deleteConfigById(id);
     }
 
-    @ApiOperation(value = "创建配置文件", tags = "配置中心")
-    @PostMapping("createConfigInfo")
-    public Result createConfigInfo(@RequestBody ConfigInfo arg) {
-        return configInfoService.createConfigInfo(arg);
-    }
 
     @ApiOperation(value = "创建配置文件", tags = "配置中心")
     @PostMapping("createConfigInfo")
     public Result createConfigInfo(@Valid @RequestBody CreateConfigInfoArg arg) {
-        return null;
+        AuthInfo authInfo = RequestContextHolder.getContext();
+        return configInfoService.createConfigInfo(arg,authInfo);
     }
 }

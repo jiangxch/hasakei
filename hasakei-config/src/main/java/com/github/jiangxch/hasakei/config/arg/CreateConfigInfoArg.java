@@ -1,10 +1,13 @@
 package com.github.jiangxch.hasakei.config.arg;
 
+import com.github.jiangxch.hasakei.config.enums.Environment;
+import com.github.jiangxch.hasakei.config.validator.EnumType;
 import lombok.Data;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 /**
@@ -16,20 +19,10 @@ public class CreateConfigInfoArg implements Serializable {
     @NotBlank
     private String configName;
     @NotNull
-    @
+    @EnumType(value = Environment.class)
     private Integer environment;
-
+    @NotNull
     private String content;
-
-    private String md5;
-
-    private Date gmtCreate;
-
-    private Date gmtModified;
-
+    @NotNull
     private String configDesc;
-
-    private Integer userId;
-
-    private String username;
 }

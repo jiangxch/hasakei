@@ -4,14 +4,26 @@
 
 
     <select id="listConfigInfoByPage" resultType="com.github.jiangxch.hasakei.config.dao.entity.ConfigInfo">
-        SELECT * FROM config_info
-        LIMIT ${(arg.pageNo - 1) * arg.pageSize},#{arg.pageSize}
+        SELECT * FROM config_info OFFSET ${(arg.pageNo - 1) * arg.pageSize} ROWS FETCH NEXT #{arg.pageSize} ROWS ONLY
     </select>
 
 
 
     <insert id="create">
-        INSERT INTO config_info  (config_name,environment,user_id,config_desc,content,md5,username)
-        VALUES (#{arg.configName},#{arg.environment},#{arg.userId},#{arg.configDesc},#{arg.content},#{arg.md5},#{arg.username})
+        INSERT INTO config_info  (config_name,environment,config_desc,content,md5,username,gmt_create,gmt_modified)
+        VALUES (#{arg.configName},#{arg.environment},#{arg.configDesc},#{arg.content},
+                #{arg.md5},#{arg.username},#{arg.gmtCreate},#{arg.gmtModified})
     </insert>
+    <update id="updateConfigInfoById">
+        UPDATE config_info SET
+        config_name=#{configInfo.configName},
+        environment=#{configInfo.environment},
+        config_desc=#{configInfo.configDesc},
+        content=#{configInfo.content},
+        md5=#{configInfo.md5},
+        username=#{configInfo.username},
+        gmt_modified=#{configInfo.gmtModified}
+        WHERE
+        id=#{configInfo.id}
+    </update>
 </mapper>

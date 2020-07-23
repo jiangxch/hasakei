@@ -22,7 +22,8 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Documented
 public @interface EnumType {
     String message() default "EnumType is not illegal";
-
+    Class<?>[] groups() default { };
+    Class<? extends Payload>[] payload() default { };
     Class<? extends Enum> value();
 
     class EnumValidator implements ConstraintValidator<EnumType, Integer> {
@@ -38,9 +39,11 @@ public @interface EnumType {
             for (Field declaredField : declaredFields) {
                 if ("name".equals(declaredField.getName())) {
                     nameField = declaredField;
+                    nameField.setAccessible(true);
                 }
                 if ("type".equals(declaredField.getName())) {
                     typeField = declaredField;
+                    typeField.setAccessible(true);
                 }
             }
             if (typeField == null) {

@@ -1,6 +1,8 @@
 package com.github.jiangxch.hasakei.config.dao.entity;
 
 import java.io.Serializable;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Date;
 import lombok.Data;
 
@@ -20,13 +22,11 @@ public class ConfigInfo implements Serializable {
 
     private String md5;
 
-    private Date gmtCreate;
+    private LocalDateTime gmtCreate;
 
-    private Date gmtModified;
+    private LocalDateTime gmtModified;
 
     private String configDesc;
-
-    private Integer userId;
 
     private String username;
 

@@ -9,18 +9,28 @@ public enum Environment {
     PROD("生产环境",2),
     ;
 
-    private String envName;
+    private String name;
     private Integer type;
 
-    Environment(String envName, Integer type) {
-        this.envName = envName;
+    Environment(String name, Integer type) {
+        this.name = name;
         this.type = type;
     }
-    public String getEnvName() {
-        return envName;
+    public String getName() {
+        return name;
     }
 
     public int getType() {
         return type;
+    }
+
+    public static Environment getByType(int type) {
+        for (Environment value : values()) {
+            if (value.getType() == type) {
+                return value;
+            }
+        }
+        String msg = String.format("there is not this type=[%d]", type);
+        throw new RuntimeException(msg);
     }
 }
