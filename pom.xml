@@ -8,8 +8,8 @@
         <module>hasakei-config</module>
         <module>hasakei-common</module>
         <module>hasakei-example</module>
-        <module>hasakei-core</module>
         <module>hasakei-api</module>
+        <module>hasakei-raft</module>
     </modules>
     <groupId>com.github.jiangxch.hasakei</groupId>
     <artifactId>hasakei</artifactId>
@@ -158,12 +158,7 @@
             <!-- Internal libs -->
             <dependency>
                 <groupId>${project.groupId}</groupId>
-                <artifactId>hasakei-core</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>${project.groupId}</groupId>
-                <artifactId>hasakei-api</artifactId>
+                <artifactId>hasakei-raft</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>

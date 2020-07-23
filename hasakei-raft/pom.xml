@@ -9,13 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>hasakei-api</artifactId>
+    <artifactId>hasakei-raft</artifactId>
 
-    <dependencies>
-        <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>hasakei-common</artifactId>
-        </dependency>
-    </dependencies>
 
 </project>
