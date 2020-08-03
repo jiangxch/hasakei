@@ -1,4 +1,4 @@
-package com.github.jiangxch.hasakei.raft.model;
+package com.github.jiangxch.hasakei.raft.core;
 
 
 import com.github.jiangxch.hasakei.raft.enums.NodeStatus;
@@ -27,7 +27,7 @@ public class Node {
     }
 
     private void init() {
-        InetSocketAddress address = raftConfig.getSlfInetAddress();
+        InetSocketAddress address = raftConfig.getSelfInetAddress();
         socketServer = new Server(address.getHostName(),address.getPort());
 
         InetSocketAddress[] clusterAddresses = raftConfig.getClusterAddresses();
@@ -39,6 +39,7 @@ public class Node {
     public void start() throws InterruptedException {
         socketServer.start();
         clientManager.start();
+        leaderElectorTimer.start();
         log.info("Raft Node start successfully...");
     }
 }

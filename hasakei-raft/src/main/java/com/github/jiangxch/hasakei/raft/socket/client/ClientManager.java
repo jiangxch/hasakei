@@ -12,8 +12,9 @@ public class ClientManager {
     private List<Client> clientList;
 
     public ClientManager(InetSocketAddress[] clusterAddresses) {
-        for (InetSocketAddress address : clusterAddresses) {
-            Client client = new Client(address.getHostName(), address.getPort());
+        for (int i = 0; i < clusterAddresses.length; i++) {
+            InetSocketAddress address = clusterAddresses[i];
+            Client client = new Client(address.getHostName(), address.getPort(),"Client-" + i);
             clientList.add(client);
         }
     }

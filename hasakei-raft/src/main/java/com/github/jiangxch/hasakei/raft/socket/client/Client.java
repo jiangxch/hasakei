@@ -20,14 +20,16 @@ import lombok.extern.slf4j.Slf4j;
  */
 @Slf4j
 public class Client {
+    private String clientName;
     private String host;
     private Integer port;
     private Channel clientChannel;
     private NioEventLoopGroup group;
 
-    public Client(String host, Integer port) {
+    public Client(String host, Integer port,String clientName) {
         this.host = host;
         this.port = port;
+        this.clientName = clientName;
     }
 
     public void start() throws InterruptedException {
@@ -48,9 +50,9 @@ public class Client {
                 });
         ChannelFuture future = b.connect(host, port).sync();
         clientChannel = future.channel();
-        log.info("Raft Client init successfully...");
         // 关闭阻塞
         future.channel().closeFuture().sync();
+        log.info("Raft {} start successfully...",this.clientName);
     }
 
     public void close() {

@@ -50,7 +50,7 @@ public class Server {
                 .childOption(ChannelOption.SO_KEEPALIVE, true);
 
         serverChannelFuture = serverBootstrap.bind(host,port).sync();
-        log.info("Raft Server start successfully...");
+        log.info("Raft Node Socket Server start successfully...");
 
         // 关闭会阻塞
         serverChannelFuture.channel().closeFuture().sync();

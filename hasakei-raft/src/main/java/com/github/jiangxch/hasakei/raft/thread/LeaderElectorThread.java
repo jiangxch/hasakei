@@ -22,7 +22,7 @@ public class LeaderElectorThread extends Thread {
             try {
                 TimeUnit.MILLISECONDS.sleep(getElectionTimeOutMillisecond());
             } catch (InterruptedException e) {
-
+                e.printStackTrace();
             }
         }
     }

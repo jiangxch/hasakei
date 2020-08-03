@@ -1,4 +1,6 @@
-package com.github.jiangxch.hasakei.raft.model;
+package com.github.jiangxch.hasakei.raft.core;
+
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * 进行leader选举的timer
@@ -6,12 +8,14 @@ package com.github.jiangxch.hasakei.raft.model;
  * @author: jiangxch
  * @date: 2020/8/2 下午10:19
  */
+@Slf4j
 public class LeaderElectorTimer {
     /**
      * 开始进行leader elector
      */
     public void start() {
 
+        log.info("Raft Node start leader elector timeout successfully...");
     }
 
     /**
