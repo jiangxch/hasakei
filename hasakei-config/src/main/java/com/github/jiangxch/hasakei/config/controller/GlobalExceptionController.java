@@ -47,7 +47,7 @@ public class GlobalExceptionController {
     @ResponseBody
     @ExceptionHandler(value = HasakeiException.class)
     public Result exceptionHandler(HttpServletRequest req, HasakeiException e) {
-        return Result.newError(e.getResultCode());
+        return Result.newError(e.getErrorCode(),e.getErrMsg());
     }
 
     // 其他异常

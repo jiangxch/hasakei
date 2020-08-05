@@ -10,10 +10,30 @@ import java.net.InetSocketAddress;
  */
 @Data
 public class RaftConfig {
+
+    // ==============================================常量
+    public int clientReConnectionWaitingSecondTime = 2;
+    public int leaderElectorWaitingTimeMillisecond = 300;
+    public int heatBeatWaitingTimeSecond = 2;
+
+
+
+    // ==============================================配置的变量
+
     /** 集群中全部节点IP port */
     private String clusterIpPorts;
     /** 自身节点的ip port */
     private String selfIpPort;
+
+
+
+
+
+
+
+
+
+
     public InetSocketAddress[] getClusterAddresses() {
         String[] ipPorts = clusterIpPorts.split(",");
         InetSocketAddress[] socketAddresses = new InetSocketAddress[ipPorts.length];

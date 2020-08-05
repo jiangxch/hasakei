@@ -13,23 +13,16 @@ public enum  ResultCode {
      * 系统错误
      */
     SYSTEM_ERROR(-2, "system error", "系统错误"),
-    /**
-     * 服务错误
-     */
-    SERVER_ERROR(-2, "server error", "服务错误"),
 
-    PARAM_MISSING_OR_ILLEGAL(10006, "the parameter %s is missing or illegal", "缺少参数 或参数 不合法"),
 
-    /**
-     * webhookkey不存在或者没有配置
-     */
-    WEBHOOK_KEY_NOT_EXIST(33008, "web hook key not exist", "webhookkey不存在或者没有配置"),
+    PARAM_MISSING_OR_ILLEGAL(100, "the parameter %s is missing or illegal", "缺少参数 或参数 不合法"),
 
     /**
      * ei不存在,或者ei未在灰度配置中
      */
-    EI_NOT_EXIST(33009, "this is is not exist,or ei not in gray", "ei不存在,或者ei未在灰度配置中"),
-    SQL_UNIQUE_ERROR(33010, "sql unique error", "sql索引插入不唯一")
+    EI_NOT_EXIST(101, "this is is not exist,or ei not in gray", "ei不存在,或者ei未在灰度配置中"),
+    SQL_UNIQUE_ERROR(102, "sql unique error", "sql索引插入不唯一"),
+    SOCKET_MESSAGE_TYPE_NOT_SUPPORT(103, "socket receive message type not support", "socket收到的消息消息类型不支持"),
     ;
     /**
      * 错误码

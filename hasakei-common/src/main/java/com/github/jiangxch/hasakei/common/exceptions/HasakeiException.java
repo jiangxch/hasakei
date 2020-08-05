@@ -11,9 +11,17 @@ import lombok.NoArgsConstructor;
  */
 @Getter
 public class HasakeiException extends RuntimeException{
-    private ResultCode resultCode;
+    private String errMsg;
+    private Integer errorCode;
     public HasakeiException(ResultCode resultCode) {
         super(resultCode.getErrorMessage());
-        this.resultCode = resultCode;
+        this.errMsg = resultCode.getErrorMessage();
+        this.errorCode = resultCode.getErrorCode();
+    }
+
+    public HasakeiException(Integer errorCode,String errMsg) {
+        super(errMsg);
+        this.errMsg = errMsg;
+        this.errorCode = errorCode;
     }
 }
